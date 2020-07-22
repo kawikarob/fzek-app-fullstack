@@ -23,7 +23,7 @@ class AllExercises extends React.Component {
    componentDidMount() {
       axios
          .get(
-            "https://raw.githubusercontent.com/kawikarob/my-workout-app/master/src/mock-data/exercises.json"
+            "http://localhost:3013/api/v1/all-exercises?searchTerm=&order=%60exercises%60.%60name%60%20ASC"
          )
          // res = repsonse
          .then((res) => {

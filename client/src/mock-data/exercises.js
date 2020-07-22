@@ -1,16 +1,16 @@
 const exercises = [
-   {
-      id: "67121441-7d5d-4dc4-bc64-4726ff06fe69",
-      exercise: "Ab Crunch Machine",
-      muscles: "Abs",
-      url: "https://www.jefit.com/exercises/56/Ab-Crunch-Machine",
-   },
-   {
-      id: "6a29f9ab-1950-4b34-804e-074f31d62f11",
-      exercise: "Barbell Bent Over Two Arm Row",
-      muscles: "Lats",
-      url: "https://www.jefit.com/exercises/807/Barbell-Bent-Over-Two-Arm-Row",
-   },
+   // {
+   //    id: "67121441-7d5d-4dc4-bc64-4726ff06fe69",
+   //    exercise: "Ab Crunch Machine",
+   //    muscles: "Abs",
+   //    url: "https://www.jefit.com/exercises/56/Ab-Crunch-Machine",
+   // },
+   // {
+   //    id: "6a29f9ab-1950-4b34-804e-074f31d62f11",
+   //    exercise: "Barbell Bent Over Two Arm Row",
+   //    muscles: "Lats",
+   //    url: "https://www.jefit.com/exercises/807/Barbell-Bent-Over-Two-Arm-Row",
+   // },
    {
       id: "df58be21-df14-4453-b288-17601e973a6a",
       exercise: "Barbell Decline Bench",

@@ -19,8 +19,16 @@ router.get("/", (req, res) => {
    }
    // mySql escaping query values
    db.query(selectAllExercises, [constructedSearchTerm, order])
-      .then((dbRes) => {
-         res.json(dbRes);
+      .then((exercises) => {
+         const camelCaseExercises = exercises.map((exercise) => {
+            return {
+               id: exercise.id,
+               name: exercise.name,
+               muscles: exercise.muscles,
+               url: exercise.url,
+            };
+         });
+         res.json(camelCaseExercises);
       })
       .catch((err) => {
          console.log(err);

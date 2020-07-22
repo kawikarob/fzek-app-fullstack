@@ -1,6 +1,6 @@
 const exerciseSchema = {
    id: String,
-   exercise: String,
+   name: String,
    muscles: String,
    url: String,
 };

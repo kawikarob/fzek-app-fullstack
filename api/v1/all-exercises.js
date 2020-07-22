@@ -18,7 +18,10 @@ router.get("/", (req, res) => {
       constructedSearchTerm = `%${searchTerm}%`;
    }
    // mySql escaping query values
-   db.query(selectAllExercises, [constructedSearchTerm, order])
+   db.query(selectAllExercises, [
+      constructedSearchTerm,
+      { toSqlString: () => order },
+   ])
       .then((exercises) => {
          const camelCaseExercises = exercises.map((exercise) => {
             return {

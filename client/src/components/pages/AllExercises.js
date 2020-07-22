@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Exercise from "../ui/Exercise";
 // import exercises from "../../mock-data/exercises";
-import orderBy from "lodash/orderBy";
 import actions from "../../store/actions";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,60 +13,40 @@ class AllExercises extends React.Component {
       super(props);
 
       this.state = {
-         order: '["exercise","asc"]',
-         displayedExercises: [],
-         allExercises: [],
+         order: "%60exercises%60.%60name%60%20ASC",
+         exercises: [],
+         searchTerm: "",
       };
    }
 
    componentDidMount() {
+      this.setExercises();
+   }
+
+   setSearchTerm() {
+      const searchInput = document.getElementById("search-input").value;
+      this.setState({ searchTerm: searchInput }, () => {
+         this.setExercises();
+      });
+   }
+
+   setExercises() {
       axios
          .get(
-            "/api/v1/all-exercises?searchTerm=&order=%60exercises%60.%60name%60%20ASC"
+            `/api/v1/all-exercises?searchTerm=${this.state.searchTerm}&order=${this.state.order}`
          )
          // res = repsonse
          .then((res) => {
             // handle success
             console.log(res.data);
-            const exercises = res.data;
             this.setState({
-               displayedExercises: orderBy(exercises, ["exercise", "asc"]),
-               allExercises: orderBy(exercises, ["exercise", "asc"]),
+               exercises: res.data,
             });
          })
          .catch((error) => {
             // handle error
             console.log(error);
          });
-   }
-
-   filterByInput(e) {
-      const searchInput = document
-         .getElementById("search-input")
-         .value.toLowerCase();
-      console.log(searchInput);
-      const copyOfAllExercises = [...this.state.allExercises];
-      console.log(copyOfAllExercises);
-
-      const filteredExercises = copyOfAllExercises.filter((exercise) => {
-         const lowerCasedExercise = exercise.exercise.toLowerCase();
-         if (lowerCasedExercise.includes(searchInput)) {
-            return true;
-         } else return false;
-      });
-      console.log(filteredExercises);
-      this.setState({ displayedExercises: filteredExercises }, () => {
-         this.setExercises();
-      });
-   }
-
-   setExercises() {
-      const copyOfDisplayedExercises = [...this.state.displayedExercises];
-      const toJson = JSON.parse(this.state.order);
-      console.log(...toJson);
-      const orderedExercises = orderBy(copyOfDisplayedExercises, ...toJson);
-      console.log(orderedExercises);
-      this.setState({ displayedExercises: orderedExercises });
    }
 
    logOutCurrentUser() {
@@ -133,16 +112,16 @@ class AllExercises extends React.Component {
                               placeholder="Search for exercise"
                               id="search-input"
                               onChange={(e) => {
-                                 this.filterByInput(e);
+                                 this.setSearchTerm(e);
                               }}
                            />
                         </div>
                      </div>
 
-                     {this.state.displayedExercises.map((exercises) => {
+                     {this.state.exercises.map((exercises) => {
                         return (
                            <Exercise
-                              exercise={exercises.exercise}
+                              exercise={exercises.name}
                               muscles={exercises.muscles}
                               url={exercises.url}
                               key={exercises.id}

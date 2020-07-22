@@ -23,7 +23,7 @@ class AllExercises extends React.Component {
    componentDidMount() {
       axios
          .get(
-            "http://localhost:3013/api/v1/all-exercises?searchTerm=&order=%60exercises%60.%60name%60%20ASC"
+            "/api/v1/all-exercises?searchTerm=&order=%60exercises%60.%60name%60%20ASC"
          )
          // res = repsonse
          .then((res) => {

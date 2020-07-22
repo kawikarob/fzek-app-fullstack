@@ -1,0 +1,150 @@
+.background-img {
+   background-image: url(../img/myApp-fitness-background1.JPG);
+   background-repeat: no-repeat;
+   background-size: cover;
+   min-height: 100vh;
+}
+
+.login-box {
+   width: 280px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: $white;
+}
+
+.textbox {
+   width: 100%;
+   overflow: hidden;
+   font-size: 20px;
+   padding: 8px 0;
+   margin: 8px 0;
+   border-bottom: 1px solid;
+}
+
+.textbox input {
+   border: none;
+   outline: none;
+   background: none;
+   color: white;
+   font-size: 16px;
+   width: 100%;
+   float: left;
+   margin: 0 10px;
+}
+
+.landing-button {
+   width: 100%;
+   background: none;
+   border: 2px solid $white;
+   color: $white;
+   padding: 5px;
+   font-size: 18px;
+}
+
+p {
+   color: $gray-100;
+}
+
+// .sideNav {
+//    width: 200px;
+//    height: 100vh;
+//    background: white;
+//    color: white;
+//    list-style: none;
+// }
+
+// h1 {
+//    color: $white;
+// }
+
+// .upperNav {
+//    background: #262626;
+//    height: 56px;
+//    width: 100vw;
+//    display: flex;
+//    align-items: center;
+//    color: pink;
+//    padding: 7px;
+// }
+
+// .upper ul {
+//    margin: 0;
+//    padding: 0;
+// }
+
+// li {
+//    color: red;
+//    list-style-type: none;
+//    text-align: center;
+//    border-radius: 5 px;
+//    padding: 0.8rem;
+// }
+
+body {
+   overflow-x: auto;
+   background-color: white;
+}
+
+#sidebar-wrapper {
+   min-height: 100vh;
+   margin-left: -15rem;
+}
+
+#sidebar-wrapper .sidebar-heading {
+   padding: 0.875rem 1.25rem;
+   font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+   width: 13rem;
+}
+
+#page-content-wrapper {
+   min-width: 100vw;
+}
+
+@media (min-width: 768px) {
+   #sidebar-wrapper {
+      margin-left: 0;
+   }
+
+   #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+   }
+
+   #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+   }
+}
+
+// create workout
+
+.card {
+   border: 0;
+}
+
+.card-body {
+   font-size: $font-size-base;
+}
+
+textarea {
+   width: 100%;
+   background-color: transparent;
+
+   border: none;
+   overflow: auto;
+   outline: none;
+
+   -webkit-box-shadow: none;
+   -moz-box-shadow: none;
+   box-shadow: none;
+
+   resize: none; //https://stackoverflow.com/a/17110012
+}
+
+.card textarea {
+   color: $black;
+}

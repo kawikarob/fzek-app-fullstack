@@ -1,3 +1,5 @@
+const bcrypt = require("bcrypt");
+
 module.exports = {
    toJson(data) {
       return JSON.stringify(data);
@@ -13,8 +15,8 @@ module.exports = {
       return JSON.parse(str); // could be undefined
    },
 
-   //    toHash(password) {
-   //       const saltRounds = 12;
-   //       return bcrypt.hash(password, saltRounds);
-   //    },
+   toHash(password) {
+      const saltRounds = 12;
+      return bcrypt.hash(password, saltRounds);
+   },
 };

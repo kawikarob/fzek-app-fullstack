@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import classnames from "classnames";
-import hash from "object-hash";
+
 import { v4 as getUuid } from "uuid";
 import axios from "axios";
 import actions from "../../store/actions";
@@ -82,7 +82,7 @@ class Landing extends React.Component {
          const user = {
             id: getUuid(),
             email: emailInput,
-            password: hash(passwordInput),
+            password: passwordInput,
             createdAt: Date.now(),
          };
          console.log("Created user object", user);

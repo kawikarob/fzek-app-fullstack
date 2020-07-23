@@ -1,15 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import classnames from "classnames";
-import hash from "object-hash";
 import { v4 as getUuid } from "uuid";
-import axios from "axios";
-import actions from "../../store/actions";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 class SignUp extends React.Component {
    constructor(props) {
@@ -100,33 +98,30 @@ class SignUp extends React.Component {
          this.state.hasEmailError === false &&
          this.state.hasPasswordError === false
       ) {
+         // create user obj
          const user = {
             id: getUuid(),
             email: emailInput,
-            password: hash(passwordInput),
+            password: passwordInput,
             createdAt: Date.now(),
          };
          console.log("Created user object", user);
-         // Mimic API Presponse:
+         // post to API
          axios
-            .get(
-               "https://raw.githubusercontent.com/kawikarob/my-workout-app/master/src/mock-data/user.json"
-            )
+            .post("/api/v1/users", user)
             .then((res) => {
-               // handle success
-               const currentUser = res.data;
-               console.log(currentUser);
-               this.props.dispatch({
-                  type: actions.UPDATE_CURRENT_USER,
-                  payload: res.data,
-               });
+               console.log(res);
             })
-            .catch((error) => {
-               // handle error
-               console.log(error);
+            .catch((err) => {
+               console.log(err);
             });
+
+         // post to API
+         // update current user
+         // got to next page: this.props.history.push("/all-my-workouts");
+
          //redirct user
-         this.props.history.push("/all-my-workouts");
+         // this.props.history.push("/all-my-workouts");
       }
    }
 
@@ -180,6 +175,9 @@ class SignUp extends React.Component {
                               </div>
                            </div>
                         </div>
+                        <span className="ml-6">
+                           Must be at least 9 characters
+                        </span>
                         {this.state.hasPasswordError && (
                            <div className="text-danger">
                               {this.state.passwordError}

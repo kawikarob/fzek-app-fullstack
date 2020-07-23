@@ -113,12 +113,12 @@ class SignUp extends React.Component {
                console.log(res);
             })
             .catch((err) => {
-               console.log(err);
+               console.log(err.response.data);
             });
 
          // post to API
          // update current user
-         // got to next page: this.props.history.push("/all-my-workouts");
+         // go to next page: this.props.history.push("/all-my-workouts");
 
          //redirct user
          // this.props.history.push("/all-my-workouts");

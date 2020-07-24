@@ -5,6 +5,7 @@ import { v4 as getUuid } from "uuid";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import landingLogo from "../../img/logo2-wht-blk.jpg";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
@@ -129,6 +130,11 @@ class SignUp extends React.Component {
       return (
          <>
             <div className="background-img">
+               <img
+                  src={landingLogo}
+                  className="landing-logo"
+                  alt="Landing Logo"
+               />
                <div className="login-box">
                   <h2>Sign Up</h2>
                   {this.state.isDisplayingInputs && (

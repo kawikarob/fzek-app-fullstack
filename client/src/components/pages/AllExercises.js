@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Exercise from "../ui/Exercise";
+import logo from "../../img/logo2-gray.jpg";
 // import exercises from "../../mock-data/exercises";
 import actions from "../../store/actions";
 import axios from "axios";
@@ -61,7 +62,9 @@ class AllExercises extends React.Component {
          <div>
             <div className="d-flex" id="wrapper">
                <div className="bg-white border-right" id="sidebar-wrapper">
-                  <h1 className="sidebar-heading mb-6">FZēK </h1>
+                  <div className="sidebar-heading">
+                     <img src={logo} alt="Logo" className="logo" />
+                  </div>
                   <div className="list-group list-group-flush">
                      <Link
                         to="/all-my-workouts"

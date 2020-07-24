@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import classnames from "classnames";
-
+import landingLogo from "../../img/logo2-wht-blk.jpg";
 import { v4 as getUuid } from "uuid";
 import axios from "axios";
 import actions from "../../store/actions";
@@ -114,6 +114,11 @@ class Landing extends React.Component {
       return (
          <>
             <div className="background-img">
+               <img
+                  src={landingLogo}
+                  className="landing-logo"
+                  alt="Landing Logo"
+               />
                <div className="login-box">
                   <h2>Welcome Back</h2>
                   {this.state.isDisplayingInputs && (
@@ -168,7 +173,7 @@ class Landing extends React.Component {
 
                         <div>
                            <button
-                              className="btn landing-button mt-4"
+                              className="btn landing-button mt-4 button2"
                               onClick={() => {
                                  this.validateAndCreateUser();
                               }}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../img/logo2-gray.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
@@ -45,7 +46,10 @@ class AllMyWorkouts extends React.Component {
          <div>
             <div className="d-flex" id="wrapper">
                <div className="bg-white border-right" id="sidebar-wrapper">
-                  <h1 className="sidebar-heading mb-6 ">FZēK </h1>
+                  {/* <h1 className="sidebar-heading mb-6 ">FZēK </h1> */}
+                  <div className="sidebar-heading">
+                     <img src={logo} alt="Logo" className="logo" />
+                  </div>
                   <div className="list-group list-group-flush">
                      <Link
                         to="/all-my-workouts"
@@ -86,7 +90,7 @@ class AllMyWorkouts extends React.Component {
                   </nav>
                   <div className="container-fluid">
                      <div className="mt-4 mb-1">
-                        <h2>All My Workouts</h2>
+                        <h2>My Workouts</h2>
                      </div>
                      <div className="row">
                         <Link to="create-workout">

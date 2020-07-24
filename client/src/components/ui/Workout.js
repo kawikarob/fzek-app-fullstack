@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 export default function Workout(props) {
@@ -16,6 +17,9 @@ export default function Workout(props) {
                   </div>
                   <div className="float-right text-muted">
                      <FontAwesomeIcon icon={faTrashAlt} />
+                  </div>
+                  <div className="float-right text-muted mr-3">
+                     <FontAwesomeIcon icon={faEdit} />
                   </div>
                </div>
                {/* <div className="clearfix"></div>

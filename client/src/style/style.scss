@@ -49,6 +49,15 @@
    color: $white;
 }
 
+.create-button {
+   background: none;
+   border: 1px solid $gray-400;
+   color: $white;
+   padding: 4px;
+   font-size: 14px;
+   color: $gray-600;
+}
+
 .landing-button:hover {
    color: $white;
    font-weight: bolder;
@@ -60,11 +69,20 @@
 // }
 
 p {
-   color: $gray-100;
+   color: $white;
 }
 
 .logo {
    height: 80px;
+}
+
+ul {
+   border: 2px solid $gray-400;
+   padding: 0px;
+   border-left: 4px solid $gray-600;
+   // border-top: 1px solid $black;
+   // border-right: 1px solid $black;
+   // border-bottom: 1px solid $black;
 }
 
 // .sideNav {

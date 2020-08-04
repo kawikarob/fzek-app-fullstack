@@ -69,13 +69,13 @@ class MyWorkout extends React.Component {
                <div id="page-content-wrapper">
                   <nav className="navbar navbar-expand-lg bg-white border-bottom">
                      <div className="navbar-collapse">
-                        <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <div className="navbar-nav ml-auto mt-2 mt-lg-0">
                            <li className="nav-item">
                               <a className="nav-link" href="/">
                                  Logout
                               </a>
                            </li>
-                        </ul>
+                        </div>
                      </div>
                   </nav>
                   <div className="container-fluid">

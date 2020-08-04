@@ -73,7 +73,7 @@ class AllMyWorkouts extends React.Component {
                <div id="page-content-wrapper">
                   <nav className="navbar navbar-expand-lg bg-white border-bottom">
                      <div className="navbar-collapse">
-                        <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <div className="navbar-nav ml-auto mt-2 mt-lg-0">
                            <li className="nav-item">
                               <Link
                                  className="nav-link"
@@ -85,7 +85,7 @@ class AllMyWorkouts extends React.Component {
                                  Logout
                               </Link>
                            </li>
-                        </ul>
+                        </div>
                      </div>
                   </nav>
                   <div className="container-fluid">
@@ -93,17 +93,20 @@ class AllMyWorkouts extends React.Component {
                         <h2>My Workouts</h2>
                      </div>
                      <div className="row">
-                        <Link to="create-workout">
+                        <Link
+                           to="create-workout"
+                           className="btn btn-sm create-button mt-2 mb-2 ml-4"
+                        >
+                           <FontAwesomeIcon icon={faPlus} className="mr-1" />
+                           New Workout
+                        </Link>
+
+                        {/* <Link to="create-workout">
                            <div className="ml-4">
                               <FontAwesomeIcon icon={faPlus} />
                            </div>
                         </Link>
-                        <h4 className="ml-2 mt-1">workout</h4>
-                        {/* <input
-                              type="text"
-                              className="form-control border"
-                              placeholder="Search workouts"
-                           /> */}
+                        <h4 className="ml-2 mt-1">workout</h4> */}
                      </div>
                      {workouts.map((workouts) => {
                         return (

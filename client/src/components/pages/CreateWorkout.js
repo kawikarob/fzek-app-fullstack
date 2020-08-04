@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import classnames from "classnames";
 import { checkIsOver, MAX_CHARS } from "../../utils/helpers";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logo from "../../img/logo2-gray.jpg";
 import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import { faThList } from "@fortawesome/free-solid-svg-icons";
 
@@ -36,7 +37,9 @@ export default class CreateWorkout extends React.Component {
          <div>
             <div className="d-flex" id="wrapper">
                <div className="bg-white border-right" id="sidebar-wrapper">
-                  <h1 className="sidebar-heading mb-6 ">FZēK </h1>
+                  <div className="sidebar-heading">
+                     <img src={logo} alt="Logo" className="logo" />
+                  </div>
                   <div className="list-group list-group-flush">
                      <Link
                         to="/all-my-workouts"
@@ -60,13 +63,13 @@ export default class CreateWorkout extends React.Component {
                <div id="page-content-wrapper">
                   <nav className="navbar navbar-expand-lg bg-white border-bottom">
                      <div className="navbar-collapse">
-                        <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <div className="navbar-nav ml-auto mt-2 mt-lg-0">
                            <li className="nav-item">
                               <a className="nav-link" href="/">
                                  Logout
                               </a>
                            </li>
-                        </ul>
+                        </div>
                      </div>
                   </nav>
                   <div className="container-fluid">

@@ -14,7 +14,7 @@ export default function Exercise(props) {
    return (
       <div>
          <ul className="list-group mt-1">
-            <li className="list-group-item">
+            <li className="list-group-item border-0">
                <div>
                   <div className="float-left">
                      <a href={props.url}>

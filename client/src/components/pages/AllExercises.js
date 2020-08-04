@@ -88,8 +88,8 @@ class AllExercises extends React.Component {
                <div id="page-content-wrapper">
                   <nav className="navbar navbar-expand-lg bg-white border-bottom">
                      <div className="navbar-collapse">
-                        <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-                           <li className="nav-item">
+                        <div className="navbar-nav ml-auto mt-2 mt-lg-0">
+                           <div className="nav-item">
                               <Link
                                  className="nav-link"
                                  to="/"
@@ -99,12 +99,12 @@ class AllExercises extends React.Component {
                               >
                                  Logout
                               </Link>
-                           </li>
-                        </ul>
+                           </div>
+                        </div>
                      </div>
                   </nav>
                   <div className="container-fluid">
-                     <div className="row mt-4 mb-1">
+                     <div className="row mt-4 mb-2">
                         <div className="col-8">
                            <h2>Exercises</h2>
                         </div>

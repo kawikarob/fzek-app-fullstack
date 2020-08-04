@@ -184,7 +184,7 @@ class Landing extends React.Component {
                         <div>
                            <br></br>
                            <Link to="/sign-up">
-                              <p>Not a member? Sign Up</p>
+                              <p>Not a member? Sign Up here!</p>
                            </Link>
                         </div>
                      </>
